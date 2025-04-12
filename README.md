@@ -44,7 +44,7 @@ Make sure you have the following installed:
 ```bash
 git clone git@github.com:Mohseenkhan468/TaskManagement_NodeJs.git
 
-cd abcd
+cd Task_NodeJs
 
 ```
 ## Install Dependencies
