@@ -69,6 +69,11 @@ JWT_SECRET_KEY="your_jwt_secret_key"
 ```bash
 npx prisma migrate dev
 ````
+## Running the Application
+
+```bash
+npm start
+````
 ## API Documentation
 ### Authentication
 - **POST /api/auth/signup**
@@ -164,6 +169,9 @@ Authorization: Bearer <JWT_TOKEN>
 ```limit```: Number of tasks per page (default: 10).
 
 ```status```: Filter tasks by status (optional).
+
+**Allowed values**: ```pending```, ```in_progress```, ```completed```
+
 This endpoint allows authenticated users to retrieve their tasks. The request must include a valid JWT token in the Authorization header to authorize the user and filter tasks based on their user ID.
 
 **Response**
@@ -235,11 +243,6 @@ Response
 }
 ```
 
-## Running the Application
-
-```bash
-npm start
-````
 ## Error Handling
 
 This application uses custom error handling middleware. Common error responses include:
