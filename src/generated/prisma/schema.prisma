@@ -27,7 +27,7 @@ model Task {
   id          String     @id @default(uuid())
   title       String
   description String?
-  status      TaskStatus
+  status      TaskStatus @default(PENDING)
   dueDate     DateTime
   userId      String
   user        User       @relation(fields: [userId], references: [id])
