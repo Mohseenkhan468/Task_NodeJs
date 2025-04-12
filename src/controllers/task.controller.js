@@ -115,6 +115,9 @@ export const updateTask = async (req, res, next) => {
     if (req?.body?.status !== undefined)
       updateData.status = req.body.status.toUpperCase();
     if (dueDate !== undefined) updateData.dueDate = new Date(dueDate);
+    if(dueDate!==undefined&&updateData.dueDate<new Date()){
+      throw new CustomError("Due date must be a valid future date.", 400);
+    }
     const updatedTask = await prismaClient.task.update({
       where: { id: taskId, userId },
       data: updateData,
